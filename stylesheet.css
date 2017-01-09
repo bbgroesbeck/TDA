@@ -21,7 +21,7 @@ body {
     text-align: center;
     background-color: #515151;
     width: 33%;
-    height: 210px;
+    min-height: 210px;
     box-shadow: 4px 4px 4px black;
     border-radius: 4px;
     margin: 0 auto;
