@@ -21,9 +21,11 @@ body {
     text-align: center;
     background-color: #515151;
     width: 20%;
+    height: 100%;
     box-shadow: 4px 4px 4px black;
     border-radius: 4px;
     margin: 0 auto;
+
 }
 
 .col-sm-12 {
