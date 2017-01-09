@@ -3,7 +3,7 @@
 <div class="wrapper">
     <div class="list">
         <div>
-            <input id="listName" placeholder="List Name"/>
+            <input title="Give your list a name" id="listName" placeholder="List Name"/>
 
             <div class="col-sm-12">
                 <button class="btn-warning btn-sm" ng-click="$ctrl.newList()">Create New List</button>
@@ -21,10 +21,11 @@
             </div>
             <br>
 
-            <div ng-repeat="toDo in $ctrl.todoModel.list"><input ng-model="toDo.completed" type="checkbox"/><input
-                    id="taskName"
-                    placeholder="Task Name" ng-model="toDo.name"/>
-                <button class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></button>
+            <div ng-repeat="toDo in $ctrl.todoModel.list"><input title="Mark Complete" ng-model="toDo.completed"
+                                                                 type="checkbox"/>
+                <input id="taskName"
+                       placeholder="Task Name" ng-model="toDo.name"/>
+                <button title="Delete Task" class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></button>
             </div>
 
             <!--created by bryce groesbeck-->
