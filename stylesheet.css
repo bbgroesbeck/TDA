@@ -1,0 +1,45 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.htag {
+    text-align: center;
+    color: red;
+}
+
+#router{
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.list {
+    text-align: center;
+    background-color: #515151;
+    width: 20%;
+    box-shadow: 4px 4px 4px black;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.col-sm-12 {
+    padding: 2px;
+}
+
+#listName {
+    padding: 5px;
+    margin: 8px auto;
+    text-align: center;
+}
+
+#taskName {
+    padding: 5px;
+    margin: 8px;
+    text-align: center;
+}
+
+/*created by bryce groesbeck*/

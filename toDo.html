@@ -1,0 +1,34 @@
+<!--add button, clear completed, list of tasks with checkbox-->
+<!--created by bryce groesbeck-->
+<div class="wrapper">
+    <div class="list">
+        <div>
+            <input id="listName" placeholder="List Name"/>
+
+            <div class="col-sm-12">
+                <button class="btn-warning btn-sm" ng-click="$ctrl.newList()">Create New List</button>
+                <!--created by bryce groesbeck-->
+            </div>
+            <br>
+
+            <div class="col-sm-12">
+                <button class="btn-primary btn-sm" ng-click="$ctrl.add()">Add New Task</button>
+            </div>
+            <br>
+            <div class="col-sm-12">
+                <button class="btn-danger btn-sm" ng-click="$ctrl.clear()">Clear Checked</button>
+
+            </div>
+            <br>
+
+            <div ng-repeat="toDo in $ctrl.todoModel.list"><input ng-model="toDo.completed" type="checkbox"/><input
+                    id="taskName"
+                    placeholder="Task Name" ng-model="toDo.name"/>
+                <button class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></button>
+            </div>
+
+            <!--created by bryce groesbeck-->
+        </div>
+    </div>
+</div>
+<!--created by bryce groesbeck-->

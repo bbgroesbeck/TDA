@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html ng-app="ngApp">
+
+<head>
+    <title>The NG To Do List</title>
+
+    <link rel="stylesheet" href="stylesheet.css" type="text/css"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>.active {
+        color: red;
+        font-weight: bold;
+    }</style>
+</head>
+
+<body>
+<!--created by bryce groesbeck-->
+
+<h1 class="htag">Bryce Groesbeck: To Do List APP</h1>
+
+<div id="router">
+    <div class="container-fluid"
+         ng-controller="mainCtrl as ctrl">
+
+        <a ui-sref="home" ui-sref-active="active">Home</a>
+        <a ui-sref="about" ui-sref-active="active">About</a>
+
+
+        <ui-view></ui-view>
+
+
+    </div>
+</div>
+<!--created by bryce groesbeck-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+
+<script src="MainCtrl.js"></script>
+<script src="aboutComponent.js"></script>
+<script src="toDoController.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>
+<!--created by bryce groesbeck-->
