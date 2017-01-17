@@ -20,12 +20,11 @@ body {
 .list {
     text-align: center;
     background-color: #515151;
-    width: 33%;
-    min-height: 210px;
+    width: 20%;
     box-shadow: 4px 4px 4px black;
     border-radius: 4px;
     margin: 0 auto;
-
+    min-height: 206px;
 }
 
 .col-sm-12 {
@@ -40,11 +39,8 @@ body {
 
 #taskName {
     padding: 5px;
-    margin: 6px;
+    margin: 8px;
     text-align: center;
 }
 
-.glyphicon{
-    color: orangered;
-}
 /*created by bryce groesbeck*/

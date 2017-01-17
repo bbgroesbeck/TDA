@@ -3,36 +3,38 @@
  */
 
 function ToDoComponentCtrl() {
-    this.todoModel = {
-        list: [ { name: '', completed: false } ]
-    };
+
  }
 // created by bryce groesbeck
 ToDoComponentCtrl.prototype.add = function () {
-    this.todoModel.list.push({name:'', completed:false})
+    this.todo.list.push({name:'', completed:false})
     };
 
 
-
+//clears checked tasks.
 ToDoComponentCtrl.prototype.clear = function () {
 
-    for (var i = 0; i < this.todoModel.list.length; i++) {
-        var task = this.todoModel.list[i];
+    for (var i = 0; i < this.todo.list.length; i++) {
+        var task = this.todo.list[i];
         if (task.completed === true){
-            this.todoModel.list.splice(i, 1);
+            this.todo.list.splice(i, 1);
             this.clear();
         }
 
     }
 };
+// //need to open a new tab in the same page.
+// ToDoComponentCtrl.prototype.newList = function () {
+//     window.open('index.html', '_blank');
+// };
 
-ToDoComponentCtrl.prototype.newList = function () {
-    window.open('index.html', '_blank');
-};
+
 // created by bryce groesbeck
 
+
+//deletes the selected task.
 ToDoComponentCtrl.prototype.remove = function (index) {
-    this.todoModel.list.splice(index, 1)
+    this.todo.list.splice(index, 1)
     };
 
 
@@ -40,7 +42,7 @@ var toDoComponent = {
     templateUrl: 'toDo.html',
     controller: ToDoComponentCtrl,
     bindings: {
-        toDo: '='
+        todo: '='
     }
 };
 // created by bryce groesbeck

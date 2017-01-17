@@ -1,14 +1,11 @@
 <!--add button, clear completed, list of tasks with checkbox-->
 <!--created by bryce groesbeck-->
-<div class="wrapper">
+<div class="wrapper" ng-if="$ctrl.todo">
     <div class="list">
-        <div>
-            <input title="Give your list a name" id="listName" placeholder="Enter List Name"/>
+        <div >
+            <input ng-model="$ctrl.todo.listName" id="listName" placeholder="List Name"/>
 
-            <div class="col-sm-12">
-                <button class="btn-warning btn-sm" ng-click="$ctrl.newList()">Create New List</button>
-                <!--created by bryce groesbeck-->
-            </div>
+
             <br>
 
             <div class="col-sm-12">
@@ -21,11 +18,10 @@
             </div>
             <br>
 
-            <div ng-repeat="toDo in $ctrl.todoModel.list"><input title="Mark Complete" ng-model="toDo.completed"
-                                                                 type="checkbox"/>
-                <input id="taskName"
-                       placeholder="Enter Task Name" ng-model="toDo.name"/>
-                <span title="Delete Task" class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></span>
+            <div ng-repeat="task in $ctrl.todo.list"><input ng-model="task.completed" type="checkbox"/><input
+                    id="taskName"
+                    placeholder="Task Name" ng-model="task.name"/>
+                <button class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></button>
             </div>
 
             <!--created by bryce groesbeck-->
