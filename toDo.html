@@ -21,7 +21,7 @@
             <div ng-repeat="task in $ctrl.todo.list"><input ng-model="task.completed" type="checkbox"/><input
                     id="taskName"
                     placeholder="Task Name" ng-model="task.name"/>
-                <button class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></button>
+                <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></span>
             </div>
 
             <!--created by bryce groesbeck-->
