@@ -47,7 +47,7 @@
 
         <ul class="nav nav-tabs">
             <!--<li class="active"><a href="#">Home</a></li>-->
-            <li ng-repeat="list in ctrl.lists" ng-click="ctrl.tabClicked(list);"><a href="#">{{list.listName}}</a></li>
+            <li ng-repeat="list in ctrl.localStorage.lists" ng-click="ctrl.tabClicked(list);"><a href="#">{{list.listName}}</a></li>
 
         </ul>
 
@@ -60,6 +60,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
 
 <script src="MainCtrl.js"></script>
 <script src="aboutComponent.js"></script>

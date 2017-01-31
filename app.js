@@ -1,8 +1,9 @@
 // created by bryce groesbeck
 
-angular.module('ngApp', ['ui.router'])
+angular.module('ngApp', ['ui.router', 'ngStorage'])
     .component('toDoComponent', toDoComponent)
     .component('aboutComponent', aboutComponent)
+
     .controller('mainCtrl', MainCtrl)
     .config(function ($stateProvider, $urlRouterProvider) {
 

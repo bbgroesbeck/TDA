@@ -2,30 +2,36 @@
 <!--created by bryce groesbeck-->
 <div class="wrapper" ng-if="$ctrl.todo">
     <div class="list">
-        <div >
-            <input ng-model="$ctrl.todo.listName" id="listName" placeholder="List Name"/>
+
+        <form name="validator">
+            <div>
+                <input name="listname" ng-model="$ctrl.todo.listName" id="listName" placeholder="List Name" required/>
+                <div ng-show="validator.listname.$invalid">This field is required</div>
+
+                <br>
+
+                <div class="col-sm-12">
+                    <button class="btn-primary btn-sm" ng-click="$ctrl.add()">Add New Task</button>
+                </div>
+                <br>
+                <div class="col-sm-12">
+                    <button class="btn-danger btn-sm" ng-click="$ctrl.clear()">Clear Checked</button>
+
+                </div>
+                <br>
+
+                <div ng-repeat="task in $ctrl.todo.list">
+                    <input ng-model="task.completed" type="checkbox"/>
+
+                    <input name="taskname" id="taskName" placeholder="Task Name" ng-model="task.name" required/>
+                    <div ng-show="validator.taskname.$invalid">This field is required</div>
+                    <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></span>
+                </div>
 
 
-            <br>
-
-            <div class="col-sm-12">
-                <button class="btn-primary btn-sm" ng-click="$ctrl.add()">Add New Task</button>
+                <!--created by bryce groesbeck-->
             </div>
-            <br>
-            <div class="col-sm-12">
-                <button class="btn-danger btn-sm" ng-click="$ctrl.clear()">Clear Checked</button>
-
-            </div>
-            <br>
-
-            <div ng-repeat="task in $ctrl.todo.list"><input ng-model="task.completed" type="checkbox"/><input
-                    id="taskName"
-                    placeholder="Task Name" ng-model="task.name"/>
-                <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></span>
-            </div>
-
-            <!--created by bryce groesbeck-->
-        </div>
+        </form>
     </div>
 </div>
 <!--created by bryce groesbeck-->

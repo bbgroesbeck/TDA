@@ -2,12 +2,14 @@
  * Created by i65114 on 1/6/17.
  */
 
-function ToDoComponentCtrl() {
+function ToDoComponentCtrl($localStorage) {
+    // this.localStorage = $localStorage;
 
  }
 // created by bryce groesbeck
 ToDoComponentCtrl.prototype.add = function () {
     this.todo.list.push({name:'', completed:false})
+    // this.localStorage.storeList = this.todo.list;
     };
 
 

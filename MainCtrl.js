@@ -3,9 +3,13 @@
  */
 
 
-function MainCtrl() {
+function MainCtrl($localStorage) {
     this.about = {name: 'Welcome to the about page!'};
-    this.lists = [];
+    this.localStorage = $localStorage;
+    console.log(this.localStorage);
+    this.localStorage = this.localStorage.$default({
+        lists: []
+    });
     this.todo;
 // created by bryce groesbeck
 
@@ -13,8 +17,8 @@ function MainCtrl() {
 
 //adding a new list.
 MainCtrl.prototype.newList = function () {
-   this.lists.push({listName:'List', list: [ { name: '', completed: false } ]});
-   this.todo = this.lists[this.lists.length - 1];
+   this.localStorage.lists.push({listName:'List', list: [ { name: '', completed: false } ]});
+   this.todo = this.localStorage.lists[this.localStorage.lists.length - 1];
 
 };
 
