@@ -1,6 +1,6 @@
 // created by bryce groesbeck
 
-angular.module('ngApp', ['ui.router', 'ngStorage'])
+angular.module('ngApp', ['ui.router', 'ngStorage', 'ngMaterial'])
     .component('toDoComponent', toDoComponent)
     .component('aboutComponent', aboutComponent)
 

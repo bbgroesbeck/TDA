@@ -5,12 +5,14 @@
 function ToDoComponentCtrl($localStorage) {
     // this.localStorage = $localStorage;
 
- }
+}
 // created by bryce groesbeck
 ToDoComponentCtrl.prototype.add = function () {
-    this.todo.list.push({name:'', completed:false})
+    this.todo.list.push({name: '', completed: false})
     // this.localStorage.storeList = this.todo.list;
-    };
+
+
+};
 
 
 //clears checked tasks.
@@ -18,7 +20,7 @@ ToDoComponentCtrl.prototype.clear = function () {
 
     for (var i = 0; i < this.todo.list.length; i++) {
         var task = this.todo.list[i];
-        if (task.completed === true){
+        if (task.completed === true) {
             this.todo.list.splice(i, 1);
             this.clear();
         }
@@ -37,7 +39,7 @@ ToDoComponentCtrl.prototype.clear = function () {
 //deletes the selected task.
 ToDoComponentCtrl.prototype.remove = function (index) {
     this.todo.list.splice(index, 1)
-    };
+};
 
 
 var toDoComponent = {

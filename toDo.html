@@ -6,7 +6,7 @@
         <form name="validator">
             <div>
                 <input name="listname" ng-model="$ctrl.todo.listName" id="listName" placeholder="List Name" required/>
-                <div ng-show="validator.listname.$invalid">This field is required</div>
+                <div ng-show="validator.listname.$invalid && validator.listname.$pristine">This field is required</div>
 
                 <br>
 
@@ -24,7 +24,8 @@
                     <input ng-model="task.completed" type="checkbox"/>
 
                     <input name="taskname" id="taskName" placeholder="Task Name" ng-model="task.name" required/>
-                    <div ng-show="validator.taskname.$invalid">This field is required</div>
+                    <div ng-show="validator.taskname.$invalid && validator.listname.$pristine">This field is required
+                    </div>
                     <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></span>
                 </div>
 
