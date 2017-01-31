@@ -2,7 +2,7 @@
  * Created by i65114 on 1/6/17.
  */
 
-function ToDoComponentCtrl($localStorage) {
+function ToDoComponentCtrl($localStorage, $mdToast) {
     // this.localStorage = $localStorage;
 
 }
@@ -10,6 +10,15 @@ function ToDoComponentCtrl($localStorage) {
 ToDoComponentCtrl.prototype.add = function () {
     this.todo.list.push({name: '', completed: false})
     // this.localStorage.storeList = this.todo.list;
+
+//mdtoast
+    this.$mdToast.show(
+        $mdToast.simple()
+            .content('Success')
+            .position('top right')
+            .hideDelay(3000)
+
+    );
 
 
 };
