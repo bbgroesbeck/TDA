@@ -21,6 +21,7 @@
                 <br>
 
                 <div ng-repeat="task in $ctrl.todo.list">
+
                     <input ng-model="task.completed" type="checkbox"/>
 
                     <input name="taskname" id="taskName" placeholder="Task Name" ng-model="task.name" required/>

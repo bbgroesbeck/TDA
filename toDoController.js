@@ -2,15 +2,15 @@
  * Created by i65114 on 1/6/17.
  */
 
-function ToDoComponentCtrl($localStorage, $mdToast) {
+function ToDoComponentCtrl($mdToast) {
     this.$mdToast = $mdToast;
-     // this.localStorage = $localStorage;
+
 
 }
 // created by bryce groesbeck
 ToDoComponentCtrl.prototype.add = function () {
-    this.todo.list.push({name: '', completed: false})
-    // this.localStorage.storeList = this.todo.list;
+    this.todo.list.push({name: '', completed: false});
+
 
 //mdtoast
     this.$mdToast.showSimple('Success, Task Added');
@@ -30,6 +30,7 @@ ToDoComponentCtrl.prototype.clear = function () {
         }
 
     }
+    //mdtoast
     this.$mdToast.showSimple('Yep, Task Cleared');
 };
 // //need to open a new tab in the same page.
@@ -45,6 +46,7 @@ ToDoComponentCtrl.prototype.clear = function () {
 ToDoComponentCtrl.prototype.remove = function (index) {
     this.todo.list.splice(index, 1)
 
+    //mdtoast
     this.$mdToast.showSimple('Sad, Task Removed');
 };
 
