@@ -3,7 +3,8 @@
  */
 
 function ToDoComponentCtrl($localStorage, $mdToast) {
-    // this.localStorage = $localStorage;
+    this.$mdToast = $mdToast;
+     // this.localStorage = $localStorage;
 
 }
 // created by bryce groesbeck
@@ -12,13 +13,7 @@ ToDoComponentCtrl.prototype.add = function () {
     // this.localStorage.storeList = this.todo.list;
 
 //mdtoast
-    this.$mdToast.show(
-        $mdToast.simple()
-            .content('Success')
-            .position('top right')
-            .hideDelay(3000)
-
-    );
+    this.$mdToast.showSimple('Success, Task Added');
 
 
 };
@@ -35,6 +30,7 @@ ToDoComponentCtrl.prototype.clear = function () {
         }
 
     }
+    this.$mdToast.showSimple('Yep, Task Cleared');
 };
 // //need to open a new tab in the same page.
 // ToDoComponentCtrl.prototype.newList = function () {
@@ -48,6 +44,8 @@ ToDoComponentCtrl.prototype.clear = function () {
 //deletes the selected task.
 ToDoComponentCtrl.prototype.remove = function (index) {
     this.todo.list.splice(index, 1)
+
+    this.$mdToast.showSimple('Sad, Task Removed');
 };
 
 
