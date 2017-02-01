@@ -12,6 +12,9 @@
 
                 <div class="col-sm-12">
                     <button class="btn-primary btn-sm" ng-click="$ctrl.add()">Add New Task</button>
+                    <input name="taskname" id="taskName" placeholder="Task Name" ng-model="$ctrl.newTaskName" required/>
+                    <div ng-show="validator.taskname.$invalid && validator.listname.$pristine">This field is required
+                    </div>
                 </div>
                 <br>
                 <div class="col-sm-12">
@@ -24,9 +27,8 @@
 
                     <input ng-model="task.completed" type="checkbox"/>
 
-                    <input name="taskname" id="taskName" placeholder="Task Name" ng-model="task.name" required/>
-                    <div ng-show="validator.taskname.$invalid && validator.listname.$pristine">This field is required
-                    </div>
+                    <span  >{{ task.name | capit }}</span>
+
                     <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></span>
                 </div>
 

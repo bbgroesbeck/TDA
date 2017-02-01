@@ -4,24 +4,24 @@
 
 function ToDoComponentCtrl($mdToast) {
     this.$mdToast = $mdToast;
+    this.newTaskName;
 
 
 }
 // created by bryce groesbeck
 ToDoComponentCtrl.prototype.add = function () {
-    this.todo.list.push({name: '', completed: false});
 
-
-//mdtoast
-    this.$mdToast.showSimple('Success, Task Added');
+   if (this.newTaskName != undefined){
+       this.todo.list.push({name: this.newTaskName , completed: false});
+       this.$mdToast.showSimple('Success, Task Added');
+   }
 
 
 };
 
-
 //clears checked tasks.
 ToDoComponentCtrl.prototype.clear = function () {
-var selected = false;
+    var selected = false;
 
     for (var i = 0; i < this.todo.list.length; i++) {
         var task = this.todo.list[i];
@@ -33,7 +33,9 @@ var selected = false;
 
     }
 
-    if (selected === true){this.$mdToast.showSimple('Yep, Task Cleared');}
+    if (selected === true) {
+        this.$mdToast.showSimple('Yep, Task Cleared');
+    }
 };
 // //need to open a new tab in the same page.
 // ToDoComponentCtrl.prototype.newList = function () {

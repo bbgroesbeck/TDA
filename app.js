@@ -5,11 +5,22 @@ angular.module('ngApp', ['ui.router', 'ngStorage', 'ngMaterial', 'ngAnimate'])
     .component('aboutComponent', aboutComponent)
 
     .controller('mainCtrl', MainCtrl)
-    .filter('capitalize', function () {
-        return function (input, scope) {
-            if (input != null)
-                input = input.toLowerCase();
-            return input.substring(0, 1).toUpperCase() + input.substring(1);
+    .filter('capit', function () {
+        return function (input) {
+            if (input != null) {
+                var splitMe = input.split(" ");
+                var output = "";
+
+                for (var i = 0; i < splitMe.length; i++) {
+
+                    splitMe[i] = splitMe[i].toLowerCase();
+                    splitMe[i] = splitMe[i].substring(0, 1).toUpperCase() + splitMe[i].substring(1);
+                }
+                output = splitMe.join(" ");
+
+                return output;
+            }
+            else return input;
         }
     })
 
