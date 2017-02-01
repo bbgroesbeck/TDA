@@ -1,10 +1,18 @@
 // created by bryce groesbeck
 
-angular.module('ngApp', ['ui.router', 'ngStorage', 'ngMaterial'])
+angular.module('ngApp', ['ui.router', 'ngStorage', 'ngMaterial', 'ngAnimate'])
     .component('toDoComponent', toDoComponent)
     .component('aboutComponent', aboutComponent)
 
     .controller('mainCtrl', MainCtrl)
+    .filter('capitalize', function () {
+        return function (input, scope) {
+            if (input != null)
+                input = input.toLowerCase();
+            return input.substring(0, 1).toUpperCase() + input.substring(1);
+        }
+    })
+
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/home');

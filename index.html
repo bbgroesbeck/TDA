@@ -39,8 +39,8 @@
     <div class="container-fluid"
          ng-controller="mainCtrl as ctrl">
 
-        <a ui-sref="home" ui-sref-active="active">Home</a>
-        <a ui-sref="about" ui-sref-active="active">About</a>
+        <a ng-animate="'animate'" ui-sref="home" ui-sref-active="active">Home</a>
+        <a ng-animate="'animate'" ui-sref="about" ui-sref-active="active">About</a>
 
         <div class="col-sm-12">
             <button class="btn-warning btn-sm" ng-click="ctrl.newList()">Create New List</button>
@@ -53,7 +53,9 @@
 
         </ul>
 
-        <ui-view></ui-view>
+        <div class="ui-view-container">
+            <div class="well" ui-view></div>
+        </div>
 
 
     </div>

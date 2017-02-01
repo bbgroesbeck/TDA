@@ -21,17 +21,19 @@ ToDoComponentCtrl.prototype.add = function () {
 
 //clears checked tasks.
 ToDoComponentCtrl.prototype.clear = function () {
+var selected = false;
 
     for (var i = 0; i < this.todo.list.length; i++) {
         var task = this.todo.list[i];
         if (task.completed === true) {
+            selected = true;
             this.todo.list.splice(i, 1);
             this.clear();
         }
 
     }
-    //mdtoast
-    this.$mdToast.showSimple('Yep, Task Cleared');
+
+    if (selected === true){this.$mdToast.showSimple('Yep, Task Cleared');}
 };
 // //need to open a new tab in the same page.
 // ToDoComponentCtrl.prototype.newList = function () {
