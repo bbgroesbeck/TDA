@@ -12,16 +12,17 @@
 
                 <div class="col-sm-12">
                     <button class="btn-primary btn-sm" ng-click="$ctrl.add()">Add New Task</button>
+                    <br>
                     <input name="taskname" id="taskName" placeholder="Task Name" ng-model="$ctrl.newTaskName" required/>
                     <div ng-show="validator.taskname.$invalid && validator.listname.$pristine">This field is required
                     </div>
                 </div>
-                <br>
+
                 <div class="col-sm-12">
                     <button class="btn-danger btn-sm" ng-click="$ctrl.clear()">Clear Checked</button>
 
                 </div>
-                <br>
+
 
                 <div ng-repeat="task in $ctrl.todo.list">
 
