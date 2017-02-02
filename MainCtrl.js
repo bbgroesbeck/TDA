@@ -18,7 +18,7 @@ function MainCtrl($localStorage, $mdToast) {
 
 //adding a new list.
 MainCtrl.prototype.newList = function () {
-   this.localStorage.lists.push({listName:'List', list: [ { name: '', completed: false } ]});
+   this.localStorage.lists.push({listName:'List', list:[]});
    this.todo = this.localStorage.lists[this.localStorage.lists.length - 1];
 
     this.$mdToast.showSimple('Success, New List Added');
