@@ -6,29 +6,28 @@
         <form name="validator">
             <div>
                 <input name="listname" ng-model="$ctrl.todo.listName" id="listName" placeholder="List Name" required/>
-                <div ng-show="validator.listname.$invalid && validator.listname.$pristine">This field is required</div>
-
-                <br>
-
+                <div ng-show="validator.listname.$invalid && validator.listname.$pristine">List Name is required</div>
                 <div class="col-sm-12">
-                    <button class="btn-primary btn-sm" ng-click="$ctrl.add()">Add New Task</button>
-                    <br>
                     <input name="taskname" id="taskName" placeholder="Task Name" ng-model="$ctrl.newTaskName" required/>
-                    <div ng-show="validator.taskname.$invalid && validator.listname.$pristine">This field is required
+                    <div id="reqText" ng-show="validator.taskname.$invalid && validator.listname.$pristine">Task Name is
+                        required
                     </div>
+                    <br>
+                    <button class="btn-primary btn-sm" ng-click="$ctrl.add()">Add New Task</button>
                 </div>
-
                 <div class="col-sm-12">
                     <button class="btn-danger btn-sm" ng-click="$ctrl.clear()">Clear Checked</button>
 
                 </div>
+                <br>
+                <p class="textColor">Tasks To Do:</p>
 
 
                 <div ng-repeat="task in $ctrl.todo.list">
 
                     <input ng-model="task.completed" type="checkbox"/>
 
-                    <span class="textColor"  >{{ task.name | capit }}</span>
+                    <span class="textTask">{{ task.name | capit }}</span>
 
                     <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove($index)"></span>
                 </div>
